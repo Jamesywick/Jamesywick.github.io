@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>James is Here</title>
+        <style>
+            body {
+                background: rgb(36, 204, 219);
+                color: rgb(0, 0, 0);
+                padding: 30px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #all-contents {
+              max-width: 800px;
+                margin: auto;
+            }
+         
+            /* navigation menu */
+            nav {
+                background: rgb(247, 81, 4);
+               margin: 0 auto;
+                display: flex;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+         
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar-img {
+                width: 200px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            #interests {
+                border: 4px silver ridge;
+                padding: 8px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+         </style>
+    </head>
+
+    <body>
+        <!-- Visibl HTML elements GO HERE-->
+        <div id="all-contents">
+            <nav>
+                <h1>James' Great Website</h1>
+                <ul id="nav-ul">
+                    <li class="nav-li"> 
+                        <a href="index.html"> Home</a>
+                    </li>
+                    <li class="nav-li">
+                    <a href="portfolio.html"> Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                <!-- Sidebar stuff -->
+                <div class="sidebar">
+                    <img class="sidebar-img"src=https://moodlede.selu.edu/moodle/pluginfile.php/380057/user/icon/snap/f1?rev=2919273">
+                </div>
+                <!-- Content stuff -->
+                <div class="content">
+                   <h2>James Hoyt</h2>
+                    <p> Student at Hahnville Highschool</p>
+                    <!-- Interests section -->
+                    <div id="interests">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>Tennis</li>
+                            <li>Spanish</li>
+                            <li>Theater</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
