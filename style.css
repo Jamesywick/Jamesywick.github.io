@@ -1,7 +1,7 @@
 body {
     background-image: url(images/Mountain.jpg);
-    background-position: center;
-    background-size: auto;
+    background-position:top;
+    background-size: 1375px;
     color: rgb(0, 0, 0);
     padding: 30px;
     font-family: 'Times New Roman', Times, serif;
