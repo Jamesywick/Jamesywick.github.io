@@ -5,7 +5,7 @@ $(document).ready(function () {
     let 
         opspark = window.opspark,
         game = opspark.createGame(create, update),
-        lives = 3;
+        lives = 1; //Change Lives #
         
     function create() {
         game.opspark.init();
@@ -22,8 +22,8 @@ $(document).ready(function () {
         opspark.player.init(game);
         
         const textOpts = { fontSize: '32px', fill: '#000' };
-        game.score = game.add.text(16, 16, 'Score: 0', textOpts);
-        game.lives = game.add.text(16, 70, 'Lives: ' + lives, textOpts);
+        game.score = game.add.text(16, 16, 'Heads: 0', textOpts); //Change Text on screan
+        game.lives = game.add.text(16, 70, 'Lives: ' + lives, textOpts); //Change Text on screan
     }
 
 
@@ -52,14 +52,14 @@ $(document).ready(function () {
     function decrementLives(){
         if(lives !== 0){
             lives--;
-            game.lives.text = 'Lives ' + lives;            
+            game.lives.text = 'Lives: ' + lives; //Change Text on screan
         } else {
-            setTimeout(() => game.lives.text = "Game Over: Refresh Your Browser to Play Again", 500);
+            setTimeout(() => game.lives.text = "Game Over: Refresh to Play Again", 500);  //Change Text on screan
         } 
     }
 
     function collectDb(player, collectable) {
-        game.score.text = 'Score: ' + (parseInt(/\s+(\S*)$/.exec(game.score.text)[1], 10) + collectable.type.points);
+        game.score.text = 'Heads: ' + (parseInt(/\s+(\S*)$/.exec(game.score.text)[1], 10) + collectable.type.points); //Change Text on screan
         collectable.kill();
     }
 
