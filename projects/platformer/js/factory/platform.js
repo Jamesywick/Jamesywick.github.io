@@ -11,7 +11,7 @@
         function create(x, y, scaleX, scaleY, immovable) {
             var platform = game.platforms.create(x, y, 'platform');
             platform.scale.setTo(scaleX || 1, scaleY || 1);
-            platform.body.immovable = immovable || true;
+            platform.body.immovable = immovable || true; //Change if walls can move
             return platform;
         }
         opspark.platform.create = create;

@@ -8,12 +8,12 @@
     opspark.cannon.factory = function (game) {
         const
             assetKeyCannon = 'cannon',
-            assetKeyProjectile = 'projectile',
-            projectileHalfSize = 12;
+            assetKeyProjectile = 'db', //Change Projectile
+            projectileHalfSize = 12;  
 
         game.cannon = game.add.group();
         game.projectile = game.add.group();
-        game.projectile.enableBody = true;
+        game.projectile.enableBody = true; //Can Bullet Kill You?
 
         function createProjectile(x, y) {
             let projectile = game.projectile.create(x, y, assetKeyProjectile);
@@ -78,7 +78,7 @@
             projectile.angle = angle;
             projectile.alpha = 0;
 
-            tween = game.add.tween(projectile).to(tweenTo, 2000, null, true, delay || 0, -1);
+            tween = game.add.tween(projectile).to(tweenTo, 3000, null, true, delay || 0, -1); // rate of fire
             configureTween(tween, projectile, cannon);
             return cannon;
        

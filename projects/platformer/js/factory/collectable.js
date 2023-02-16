@@ -20,9 +20,9 @@
                     collectable.body.height = 44;
                     break;
                     
-                case 'grace':
+                case 'grace': 
                 case 'kennedi':
-                    collectable.scale.x = collectable.scale.y = 0.9;
+                    collectable.scale.x = collectable.scale.y = 0.9; //cahnge Size of collectable
                     break;
                 
                 default:

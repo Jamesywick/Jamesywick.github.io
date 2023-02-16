@@ -41,7 +41,7 @@
     // example:
     createCollectable(type.grace, 100, 170, 6, 0.7); //top
     createCollectable(type.kennedi, 800, 125, 6, 0.7); // Tippytop
-    createCollectable(type.db, 650, 500, 6, 0.7); //bottom
+    createCollectable(type.steve, 650, 500, 6, 0.7); //bottom
     createCollectable(type.steve, 300, 300, 6, 0.7); //2ndPlatform
     createCollectable(type.max, 100, 400, 6, 0.7); //First platform
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////

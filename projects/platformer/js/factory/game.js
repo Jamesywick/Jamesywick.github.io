@@ -26,12 +26,12 @@
         }
         
         if (renderDebug) config.render = render;
-        game = new Phaser.Game(900, 700, Phaser.AUTO, '', config);
+        game = new Phaser.Game(900, 700, Phaser.AUTO, '', config); //Size of Game
         
         // create namespace on the game //
         game.opspark = {};
         game.opspark.init = function() {
-            game.stage.backgroundColor = "#E9EEF7";
+            game.stage.backgroundColor = "#00fff7"; //Background Color
             game.physics.startSystem(Phaser.Physics.ARCADE);
             game.physics.arcade.TILE_BIAS = 2;
         };

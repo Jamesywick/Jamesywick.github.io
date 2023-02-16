@@ -5,7 +5,7 @@
     let 
         opspark = window.opspark,
         animations = {},
-        spawnX = 30,
+        spawnX = 30, //Change Spawn location
         spawnY = 600;
         
     opspark.createPlayer = function (game) {
@@ -130,14 +130,14 @@
             state.enter = function() {
                 console.log(`entering ${ name }`);
                 asset.body.bounce.y = 0;
-                game.add.tween(asset.body).to( { y: asset.body.y -100 }, 1000, Phaser.Easing.Linear.None, true);
+                game.add.tween(asset.body).to( { y: asset.body.y -100 }, 1000, Phaser.Easing.Linear.None, true); //-100, 1000
 
-                asset.body.velocity.x = 200 * _direction;
+                asset.body.velocity.x = 200 * _direction; //200
                 asset.x += xOffset * _direction;
                 asset.y += yOffset;
             };
             state.exit = function() {
-                asset.body.bounce.y = 0.4;
+                asset.body.bounce.y = 0.4; //.4
                 asset.x -= xOffset * _direction;
                 asset.y -= yOffset;
             };
@@ -169,7 +169,7 @@
          */
         function run() {
             asset.scale.x = _direction;
-            asset.body.velocity.x = 200 * _direction;
+            asset.body.velocity.x = 500 * _direction; //speed
             asset.animations.play('run');
             setState(_run);
         }
@@ -320,10 +320,10 @@
     
         //  Player physics properties. Give the little guy a slight bounce.
         asset.body.bounce.y = 0.4;
-        asset.body.gravity.y = 900;
+        asset.body.gravity.y = 900; // gravity
         // {"w":69,"h":107}
-        asset.body.setSize(22, 95, 0, -3);
-        asset.body.collideWorldBounds = true;
+        asset.body.setSize(22, 95, 0, -3); //22,95,0,-3
+        asset.body.collideWorldBounds = true; //Keeps you in bounds
         
         return asset;
     }
