@@ -26,7 +26,7 @@
         }
         
         if (renderDebug) config.render = render;
-        game = new Phaser.Game(900, 700, Phaser.AUTO, '', config); //Size of Game
+        game = new Phaser.Game(1100, 700, Phaser.AUTO, '', config); //Size of Game
         
         // create namespace on the game //
         game.opspark = {};

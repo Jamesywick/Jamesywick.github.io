@@ -39,10 +39,11 @@
     // example:
     createPlatform(0, 250, 0.75, 0.5); //Platform4
     createPlatform(150, 375, 1, 0.5); //Platform2
-    createPlatform(400, 200, 3, 0.5); //Platform3
+    createPlatform(400, 200, 1.25, 0.5); //Platform3
     createPlatform(50, 475, 1, 0.5);    //Platform1
     createPlatform(300, 625, 0.5, 40); //Stairs
     createPlatform(400, 575, 2, 40);   //Stairs
+    createPlatform( 975,350, .25, .5);
     
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
