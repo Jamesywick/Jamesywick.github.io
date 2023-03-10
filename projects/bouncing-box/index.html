@@ -8,23 +8,31 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-image:url(images/1225048.avif);
+			background-size: 70px;
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left:10px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
+			background-color: rgba(81, 178, 211, 0.838);
+			background-image: url(images/frank-mckenna-OD9EOzfSOh0-unsplash.jpg);
+			background-position:top;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 <body class="board">
+	
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 
@@ -40,17 +48,19 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var boardHeight = jQuery(window).height(); 
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			/*var interval =*/ setInterval(update, 20);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-
+            //board.on('click', handleBoardClick);
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+			function moveBoxTo(newPositionX, newPositionY) {
+     		box.css('left', newPositionX);
+     		box.css('top', newPositionY);
+  }
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -62,8 +72,12 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
-
+			var positionX = 500;
+			var positionY = 500;
+			var points = 0;
+			var speed = 5;
+			var speedY = 5;
+			var misclick = 0;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -71,8 +85,21 @@
 			turn it around! 
 			*/
 			function update() {
-				
-
+				positionX = positionX + speed;
+				positionY = positionY + speedY;
+				moveBoxTo(positionX, positionY);
+				if (positionX >= boardWidth - 50) {
+					speed = -speed 
+				}
+				if (positionX <= 0) {
+					speed = -speed
+				}
+				if (positionY <= boardHeight - 50) {
+					speedY = -speedY 
+				}
+				if (positionY >= 0) {
+					speedY = -speedY
+				}
 			};
 
 			/* 
@@ -80,11 +107,29 @@
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
+			/* function endGame() {
+    			clearInterval(interval);
+				changeBoxText("GG")
+				moveBoxTo(boardWidth / 2 , boardHeight / 2);
+			
+			}; */
+
 			function handleBoxClick() {
 				
-
-
+				points = points + 1;
+				changeBoxText(points);
+				speed = -speed + 1 ;
+				speedY = -speedY - 1;
 			};
+
+			/*function handleBoardClick() {
+				misclick += 1
+				if (misclick >= 10) {
+					endGame();
+				}
+			}; */
+
+			
 		})();
 	</script>
 </body>
