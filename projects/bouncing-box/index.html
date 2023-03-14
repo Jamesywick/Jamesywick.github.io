@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bouncing Box</title>
+	<link rel="icon" href="images/1225048.avif">
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
@@ -55,7 +56,7 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-            //board.on('click', handleBoardClick);
+            board.on('click', handleBoardClick);
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
      		box.css('left', newPositionX);
@@ -77,6 +78,7 @@
 			var points = 0;
 			var speed = 5;
 			var speedY = 5;
+			var zoom = 0.5;
 			var misclick = 0;
 			
 			/* 
@@ -115,19 +117,27 @@
 			}; */
 
 			function handleBoxClick() {
-				
+				speed = -speed
+				speedY = -speedY
 				points = points + 1;
 				changeBoxText(points);
-				speed = -speed + 1 ;
-				speedY = -speedY - 1;
+
+				if (speed >= 0){
+					speed += zoom;
+				} else if (speed <= 0){
+					speed += -zoom;
+				}
+
+				if (speedY >= 0){
+					speedY += zoom;
+				} else if (speedY <= 0){
+					speedY += -zoom;
+				}
 			};
 
-			/*function handleBoardClick() {
-				misclick += 1
-				if (misclick >= 10) {
-					endGame();
-				}
-			}; */
+			function handleBoardClick() {
+
+			};
 
 			
 		})();
