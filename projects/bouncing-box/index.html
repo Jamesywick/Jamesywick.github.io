@@ -77,9 +77,10 @@
 			var positionX = 500;
 			var positionY = 500;
 			var points = 0;
-			var speed = 5;
+			var speed = 1;
 			var speedY = 5;
 			var zoom = 0.5;
+			var zooms = 1;
 			var misclick = 0;
 			
 			/* 
@@ -124,9 +125,9 @@
 				changeBoxText(points);
 
 				if (speed >= 0){
-					speed += zoom;
+					speed += zooms;
 				} else if (speed <= 0){
-					speed += -zoom;
+					speed += -zooms;
 				}
 
 				if (speedY >= 0){
