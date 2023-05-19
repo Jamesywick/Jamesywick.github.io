@@ -16,8 +16,9 @@ var makeLevelData = function (window) {
         speed: -3,
         gameItems: [
           { type: "sawblade", x: 400, y: groundY },
-          { type: "sawblade", x: 600, y: groundY },
-          { type: "sawblade", x: 900, y: groundY },
+          { type: "enemy", x: 600, y: groundY },
+          { type: "reward", x: 900, y: groundY },
+          { type: "marker", x: 1700, y: groundY },
         ],
       },
       {
@@ -25,9 +26,21 @@ var makeLevelData = function (window) {
         number: 2,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY },
-          { type: "sawblade", x: 600, y: groundY },
-          { type: "sawblade", x: 900, y: groundY },
+          { type: "enemy", x: 400, y: groundY },
+          { type: "sawblade", x: 900, y: groundY - 75 },
+          { type: "reward", x: 500, y: groundY },
+          { type: "marker", x: 1700, y: groundY },
+        ],
+      },
+      {
+        name: "Walmart",
+        number: 3,
+        speed: -3,
+        gameItems: [
+          { type: "sawblade", x: 700, y: groundY },
+          { type: "reward", x: 900, y: groundY },
+          { type: "enemy", x: 1300, y: groundY },
+          { type: "marker", x: 1700, y: groundY },
         ],
       },
     ];
