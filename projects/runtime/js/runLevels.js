@@ -51,7 +51,7 @@ var runLevels = function (window) {
     enemy.rotationalVelocity = Math.random() * 10
     game.addGameItem(enemy); 
     enemy.onPlayerCollision = function () {
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-1)
     };
     enemy.onProjectileCollision = function () {
       game.increaseScore(100);
@@ -96,7 +96,7 @@ var runLevels = function (window) {
 
   function creatMarker(x, y){
     var mark = game.createGameItem("mark", 100);
-    var markThing = draw.bitmap("img/tree.png");
+    var markThing = draw.bitmap("img/Wallogo.png");
 
     markThing.x = -125;
     markThing.y = -125;
